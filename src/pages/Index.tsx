@@ -87,45 +87,6 @@ const Index = () => {
       </div>
       
       <div className="max-w-2xl mx-auto px-4 py-12 relative z-10">
-        <Card className="mb-8 p-10 shadow-2xl border border-white/20 bg-gradient-to-br from-white/95 via-white/90 to-white/95 backdrop-blur-md animate-fade-in relative overflow-hidden group hover:shadow-blue-500/20 transition-all duration-500">
-          <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-transparent to-orange-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-          <div className="absolute -top-24 -right-24 w-48 h-48 bg-gradient-to-br from-blue-400/20 to-cyan-400/20 rounded-full blur-3xl animate-pulse" style={{ animationDuration: '6s' }}></div>
-          <div className="absolute -bottom-20 -left-20 w-40 h-40 bg-gradient-to-tr from-orange-400/20 to-amber-400/20 rounded-full blur-3xl animate-pulse" style={{ animationDuration: '8s', animationDelay: '1s' }}></div>
-          
-          <div className="flex flex-col items-center text-center relative z-10">
-            <div className="relative mb-6 group/icon">
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-full blur-xl opacity-50 group-hover/icon:opacity-75 transition-opacity duration-500 animate-pulse" style={{ animationDuration: '3s' }}></div>
-              <div className="relative w-28 h-28 rounded-full bg-gradient-to-br from-blue-500 via-blue-600 to-cyan-600 flex items-center justify-center shadow-2xl animate-scale-in transform group-hover/icon:scale-110 transition-transform duration-500">
-                <Icon name="HardHat" size={56} className="text-white" />
-              </div>
-            </div>
-            
-            <h1 className="text-5xl font-bold mb-3 bg-gradient-to-r from-slate-900 via-blue-900 to-slate-900 bg-clip-text text-transparent animate-fade-in">
-              Школа Частного Строительства
-            </h1>
-            
-            <div className="flex items-center gap-2 mb-2">
-              <div className="w-12 h-0.5 bg-gradient-to-r from-transparent via-blue-500 to-transparent"></div>
-              <p className="text-xl text-slate-700 font-semibold">
-                Проверенная опытом
-              </p>
-              <div className="w-12 h-0.5 bg-gradient-to-r from-transparent via-blue-500 to-transparent"></div>
-            </div>
-            
-            <p className="text-slate-600 mb-8 max-w-md leading-relaxed">
-              Учебный материал по частному строительству от практикующих специалистов. Строим правильно с первого раза.
-            </p>
-            
-            <Button 
-              size="lg" 
-              className="w-full max-w-sm shadow-2xl hover:shadow-blue-500/50 transition-all duration-500 bg-gradient-to-r from-blue-600 via-blue-500 to-cyan-500 hover:from-blue-700 hover:via-blue-600 hover:to-cyan-600 text-white font-bold py-7 text-lg rounded-2xl transform hover:scale-105 hover:-translate-y-1 relative overflow-hidden group/btn"
-            >
-              <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 translate-x-[-200%] group-hover/btn:translate-x-[200%] transition-transform duration-1000"></div>
-              <Icon name="ShoppingCart" size={22} className="mr-2 relative z-10" />
-              <span className="relative z-10">Купить курс</span>
-            </Button>
-          </div>
-        </Card>
 
         <div className="space-y-5 mb-8 animate-fade-in">
           {socialLinks.map((link, index) => (
@@ -176,44 +137,7 @@ const Index = () => {
           ))}
         </div>
 
-        <Card className="p-10 shadow-2xl border border-white/20 bg-gradient-to-br from-white/95 to-white/90 backdrop-blur-md animate-fade-in relative overflow-hidden group hover:shadow-blue-500/20 transition-all duration-500">
-          <div className="absolute -top-20 -left-20 w-40 h-40 bg-gradient-to-br from-blue-400/10 to-transparent rounded-full blur-3xl animate-pulse" style={{ animationDuration: '7s' }}></div>
-          <div className="absolute -bottom-16 -right-16 w-32 h-32 bg-gradient-to-tl from-cyan-400/10 to-transparent rounded-full blur-3xl animate-pulse" style={{ animationDuration: '9s', animationDelay: '1.5s' }}></div>
-          
-          <div className="flex items-center mb-8 relative z-10">
-            <div className="relative mr-4">
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-2xl blur-lg opacity-50 animate-pulse" style={{ animationDuration: '4s' }}></div>
-              <div className="relative w-14 h-14 rounded-2xl bg-gradient-to-br from-blue-500 via-blue-600 to-cyan-600 flex items-center justify-center shadow-xl">
-                <Icon name="HelpCircle" size={28} className="text-white" />
-              </div>
-            </div>
-            <h2 className="text-3xl font-bold bg-gradient-to-r from-slate-900 via-blue-900 to-slate-900 bg-clip-text text-transparent">
-              Вопросы и ответы
-            </h2>
-          </div>
-          
-          <Accordion type="single" collapsible className="space-y-3 relative z-10">
-            {faqs.map((faq, index) => (
-              <AccordionItem 
-                key={index} 
-                value={`item-${index}`}
-                className="border-2 border-slate-200/50 rounded-2xl px-6 bg-gradient-to-r from-slate-50/80 to-white/80 hover:from-blue-50/80 hover:to-cyan-50/80 hover:border-blue-200/50 transition-all duration-300 hover:shadow-lg group/item"
-              >
-                <AccordionTrigger className="text-left font-bold text-slate-800 hover:text-blue-600 py-5 transition-colors duration-300">
-                  <span className="flex items-center gap-3">
-                    <span className="w-1.5 h-1.5 rounded-full bg-blue-500 group-hover/item:scale-150 transition-transform duration-300"></span>
-                    {faq.question}
-                  </span>
-                </AccordionTrigger>
-                <AccordionContent className="text-slate-700 pb-5 leading-relaxed font-medium">
-                  {faq.answer}
-                </AccordionContent>
-              </AccordionItem>
-            ))}
-          </Accordion>
-        </Card>
-
-        <div className="mt-8 text-center text-sm text-slate-500 animate-fade-in">
+        <div className="mt-8 text-center text-sm text-white/60 animate-fade-in">
           <p>© 2026 Все права защищены</p>
         </div>
       </div>
