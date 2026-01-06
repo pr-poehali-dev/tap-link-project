@@ -19,10 +19,18 @@ const Index = () => {
     {
       id: "telegram",
       title: "Telegram канал",
-      description: "Новости и анонсы курсов",
-      icon: "Send",
+      description: "За жили были",
+      icon: "Home",
       url: "https://t.me/",
       color: "from-blue-500 to-blue-600"
+    },
+    {
+      id: "telegram-svo",
+      title: "Помощь военным СВО",
+      description: "Сбор гуманитарной помощи",
+      icon: "Heart",
+      url: "https://t.me/",
+      color: "from-red-500 to-orange-600"
     },
     {
       id: "website",
@@ -58,24 +66,39 @@ const Index = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-slate-100">
-      <div className="max-w-2xl mx-auto px-4 py-12">
-        <Card className="mb-8 p-8 shadow-xl border-0 bg-white/80 backdrop-blur-sm animate-fade-in">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-slate-100 relative overflow-hidden">
+      <div className="absolute top-0 left-0 w-64 h-64 bg-orange-200/20 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
+      <div className="absolute bottom-0 right-0 w-96 h-96 bg-blue-200/20 rounded-full blur-3xl translate-x-1/3 translate-y-1/3"></div>
+      
+      <div className="absolute top-20 right-10 opacity-5">
+        <Icon name="HardHat" size={120} className="text-slate-600" />
+      </div>
+      <div className="absolute bottom-32 left-10 opacity-5">
+        <Icon name="Hammer" size={100} className="text-slate-600" />
+      </div>
+      <div className="absolute top-1/2 right-20 opacity-5">
+        <Icon name="Wrench" size={80} className="text-slate-600" />
+      </div>
+      
+      <div className="max-w-2xl mx-auto px-4 py-12 relative z-10">
+        <Card className="mb-8 p-8 shadow-xl border-0 bg-white/90 backdrop-blur-sm animate-fade-in relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-orange-400/10 to-transparent rounded-bl-full"></div>
+          <div className="absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-tr from-blue-400/10 to-transparent rounded-tr-full"></div>
           <div className="flex flex-col items-center text-center">
             <div className="w-24 h-24 rounded-full bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center mb-6 shadow-lg animate-scale-in">
               <Icon name="HardHat" size={48} className="text-white" />
             </div>
             
             <h1 className="text-4xl font-bold mb-3 bg-gradient-to-r from-slate-800 to-slate-600 bg-clip-text text-transparent">
-              Технологии Строительства
+              Школа Частного Строительства
             </h1>
             
             <p className="text-lg text-slate-600 mb-2 font-medium">
-              Управление Строительными Проектами
+              Проверенная опытом
             </p>
             
             <p className="text-slate-500 mb-6 max-w-md">
-              Профессиональный курс для специалистов строительной отрасли. Изучите современные технологии и методы управления проектами.
+              Учебный материал по частному строительству от практикующих специалистов. Строим правильно с первого раза.
             </p>
             
             <Button 
@@ -92,7 +115,7 @@ const Index = () => {
           {socialLinks.map((link, index) => (
             <Card 
               key={link.id}
-              className="overflow-hidden border-0 shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer bg-white/80 backdrop-blur-sm"
+              className="overflow-hidden border-0 shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer bg-white/90 backdrop-blur-sm relative"
               style={{ animationDelay: `${index * 100}ms` }}
               onMouseEnter={() => setHoveredLink(link.id)}
               onMouseLeave={() => setHoveredLink(null)}
@@ -128,7 +151,8 @@ const Index = () => {
           ))}
         </div>
 
-        <Card className="p-8 shadow-xl border-0 bg-white/80 backdrop-blur-sm animate-fade-in">
+        <Card className="p-8 shadow-xl border-0 bg-white/90 backdrop-blur-sm animate-fade-in relative overflow-hidden">
+          <div className="absolute top-0 left-0 w-40 h-40 bg-gradient-to-br from-blue-400/5 to-transparent rounded-br-full"></div>
           <div className="flex items-center mb-6">
             <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center mr-4 shadow-md">
               <Icon name="HelpCircle" size={24} className="text-white" />
