@@ -66,18 +66,24 @@ const Index = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-slate-100 relative overflow-hidden">
-      <div className="absolute top-0 left-0 w-64 h-64 bg-orange-200/20 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
-      <div className="absolute bottom-0 right-0 w-96 h-96 bg-blue-200/20 rounded-full blur-3xl translate-x-1/3 translate-y-1/3"></div>
+    <div className="min-h-screen relative overflow-hidden bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900">
+      <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmZmZmYiIGZpbGwtb3BhY2l0eT0iMC4wMyI+PHBhdGggZD0iTTM2IDE2YzAtNi42MjcgNS4zNzMtMTIgMTItMTJzMTIgNS4zNzMgMTIgMTItNS4zNzMgMTItMTIgMTItMTItNS4zNzMtMTItMTJ6bTAgMjRjMC02LjYyNyA1LjM3My0xMiAxMi0xMnMxMiA1LjM3MyAxMiAxMi01LjM3MyAxMi0xMiAxMi0xMi01LjM3My0xMi0xMnoiLz48L2c+PC9nPjwvc3ZnPg==')] opacity-40"></div>
       
-      <div className="absolute top-20 right-10 opacity-5">
-        <Icon name="HardHat" size={120} className="text-slate-600" />
+      <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-gradient-to-br from-orange-500/30 via-amber-500/20 to-transparent rounded-full blur-3xl animate-pulse" style={{ animationDuration: '8s' }}></div>
+      <div className="absolute top-1/4 right-0 w-[600px] h-[600px] bg-gradient-to-bl from-blue-500/30 via-cyan-500/20 to-transparent rounded-full blur-3xl animate-pulse" style={{ animationDuration: '10s', animationDelay: '1s' }}></div>
+      <div className="absolute bottom-0 left-1/4 w-[450px] h-[450px] bg-gradient-to-tr from-indigo-500/30 via-purple-500/20 to-transparent rounded-full blur-3xl animate-pulse" style={{ animationDuration: '12s', animationDelay: '2s' }}></div>
+      
+      <div className="absolute top-32 right-16 opacity-[0.03]">
+        <Icon name="HardHat" size={140} className="text-white" />
       </div>
-      <div className="absolute bottom-32 left-10 opacity-5">
-        <Icon name="Hammer" size={100} className="text-slate-600" />
+      <div className="absolute bottom-40 left-12 opacity-[0.03]">
+        <Icon name="Hammer" size={120} className="text-white" />
       </div>
-      <div className="absolute top-1/2 right-20 opacity-5">
-        <Icon name="Wrench" size={80} className="text-slate-600" />
+      <div className="absolute top-1/2 right-24 opacity-[0.03]">
+        <Icon name="Wrench" size={100} className="text-white" />
+      </div>
+      <div className="absolute top-1/3 left-20 opacity-[0.03]">
+        <Icon name="Ruler" size={90} className="text-white" />
       </div>
       
       <div className="max-w-2xl mx-auto px-4 py-12 relative z-10">
