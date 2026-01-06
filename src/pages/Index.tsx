@@ -87,98 +87,125 @@ const Index = () => {
       </div>
       
       <div className="max-w-2xl mx-auto px-4 py-12 relative z-10">
-        <Card className="mb-8 p-8 shadow-xl border-0 bg-white/90 backdrop-blur-sm animate-fade-in relative overflow-hidden">
-          <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-orange-400/10 to-transparent rounded-bl-full"></div>
-          <div className="absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-tr from-blue-400/10 to-transparent rounded-tr-full"></div>
-          <div className="flex flex-col items-center text-center">
-            <div className="w-24 h-24 rounded-full bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center mb-6 shadow-lg animate-scale-in">
-              <Icon name="HardHat" size={48} className="text-white" />
+        <Card className="mb-8 p-10 shadow-2xl border border-white/20 bg-gradient-to-br from-white/95 via-white/90 to-white/95 backdrop-blur-md animate-fade-in relative overflow-hidden group hover:shadow-blue-500/20 transition-all duration-500">
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-transparent to-orange-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+          <div className="absolute -top-24 -right-24 w-48 h-48 bg-gradient-to-br from-blue-400/20 to-cyan-400/20 rounded-full blur-3xl animate-pulse" style={{ animationDuration: '6s' }}></div>
+          <div className="absolute -bottom-20 -left-20 w-40 h-40 bg-gradient-to-tr from-orange-400/20 to-amber-400/20 rounded-full blur-3xl animate-pulse" style={{ animationDuration: '8s', animationDelay: '1s' }}></div>
+          
+          <div className="flex flex-col items-center text-center relative z-10">
+            <div className="relative mb-6 group/icon">
+              <div className="absolute inset-0 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-full blur-xl opacity-50 group-hover/icon:opacity-75 transition-opacity duration-500 animate-pulse" style={{ animationDuration: '3s' }}></div>
+              <div className="relative w-28 h-28 rounded-full bg-gradient-to-br from-blue-500 via-blue-600 to-cyan-600 flex items-center justify-center shadow-2xl animate-scale-in transform group-hover/icon:scale-110 transition-transform duration-500">
+                <Icon name="HardHat" size={56} className="text-white" />
+              </div>
             </div>
             
-            <h1 className="text-4xl font-bold mb-3 bg-gradient-to-r from-slate-800 to-slate-600 bg-clip-text text-transparent">
+            <h1 className="text-5xl font-bold mb-3 bg-gradient-to-r from-slate-900 via-blue-900 to-slate-900 bg-clip-text text-transparent animate-fade-in">
               Школа Частного Строительства
             </h1>
             
-            <p className="text-lg text-slate-600 mb-2 font-medium">
-              Проверенная опытом
-            </p>
+            <div className="flex items-center gap-2 mb-2">
+              <div className="w-12 h-0.5 bg-gradient-to-r from-transparent via-blue-500 to-transparent"></div>
+              <p className="text-xl text-slate-700 font-semibold">
+                Проверенная опытом
+              </p>
+              <div className="w-12 h-0.5 bg-gradient-to-r from-transparent via-blue-500 to-transparent"></div>
+            </div>
             
-            <p className="text-slate-500 mb-6 max-w-md">
+            <p className="text-slate-600 mb-8 max-w-md leading-relaxed">
               Учебный материал по частному строительству от практикующих специалистов. Строим правильно с первого раза.
             </p>
             
             <Button 
               size="lg" 
-              className="w-full max-w-sm shadow-lg hover:shadow-xl transition-all duration-300 bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white font-semibold py-6 text-lg"
+              className="w-full max-w-sm shadow-2xl hover:shadow-blue-500/50 transition-all duration-500 bg-gradient-to-r from-blue-600 via-blue-500 to-cyan-500 hover:from-blue-700 hover:via-blue-600 hover:to-cyan-600 text-white font-bold py-7 text-lg rounded-2xl transform hover:scale-105 hover:-translate-y-1 relative overflow-hidden group/btn"
             >
-              <Icon name="ShoppingCart" size={20} className="mr-2" />
-              Купить курс
+              <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 translate-x-[-200%] group-hover/btn:translate-x-[200%] transition-transform duration-1000"></div>
+              <Icon name="ShoppingCart" size={22} className="mr-2 relative z-10" />
+              <span className="relative z-10">Купить курс</span>
             </Button>
           </div>
         </Card>
 
-        <div className="space-y-4 mb-8 animate-fade-in">
+        <div className="space-y-5 mb-8 animate-fade-in">
           {socialLinks.map((link, index) => (
             <Card 
               key={link.id}
-              className="overflow-hidden border-0 shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer bg-white/90 backdrop-blur-sm relative"
+              className="overflow-hidden border border-white/20 shadow-2xl hover:shadow-blue-500/30 transition-all duration-500 cursor-pointer bg-gradient-to-r from-white/95 to-white/90 backdrop-blur-md relative group hover:scale-[1.02] hover:-translate-y-1 animate-fade-in"
               style={{ animationDelay: `${index * 100}ms` }}
               onMouseEnter={() => setHoveredLink(link.id)}
               onMouseLeave={() => setHoveredLink(null)}
             >
+              <div className="absolute inset-0 bg-gradient-to-r opacity-0 group-hover:opacity-100 transition-opacity duration-500" style={{ background: `linear-gradient(90deg, ${link.color.includes('green') ? 'rgba(34, 197, 94, 0.05)' : link.color.includes('blue') ? 'rgba(59, 130, 246, 0.05)' : link.color.includes('red') ? 'rgba(239, 68, 68, 0.05)' : 'rgba(100, 116, 139, 0.05)'} 0%, transparent 100%)` }}></div>
+              <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-white/50 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              
               <a 
                 href={link.url}
-                className="flex items-center p-6 group"
+                className="flex items-center p-7 group/link relative z-10"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${link.color} flex items-center justify-center mr-4 shadow-md group-hover:scale-110 transition-transform duration-300`}>
-                  <Icon name={link.icon as any} size={28} className="text-white" />
+                <div className="relative mr-5">
+                  <div className={`absolute inset-0 bg-gradient-to-br ${link.color} rounded-2xl blur-lg opacity-50 group-hover:opacity-75 group-hover:blur-xl transition-all duration-500`}></div>
+                  <div className={`relative w-16 h-16 rounded-2xl bg-gradient-to-br ${link.color} flex items-center justify-center shadow-xl group-hover:scale-110 group-hover:rotate-3 transition-all duration-500`}>
+                    <Icon name={link.icon as any} size={32} className="text-white" />
+                  </div>
                 </div>
                 
                 <div className="flex-1">
-                  <h3 className="text-lg font-semibold text-slate-800 mb-1 group-hover:text-blue-600 transition-colors">
+                  <h3 className="text-xl font-bold text-slate-800 mb-1 group-hover:text-blue-600 transition-colors duration-300">
                     {link.title}
                   </h3>
-                  <p className="text-sm text-slate-500">
+                  <p className="text-sm text-slate-600 font-medium">
                     {link.description}
                   </p>
                 </div>
                 
-                <Icon 
-                  name="ChevronRight" 
-                  size={24} 
-                  className={`text-slate-400 transition-all duration-300 ${
-                    hoveredLink === link.id ? 'translate-x-1 text-blue-600' : ''
-                  }`}
-                />
+                <div className="relative">
+                  <div className="absolute inset-0 bg-blue-500 rounded-full blur-lg opacity-0 group-hover:opacity-50 transition-opacity duration-500"></div>
+                  <Icon 
+                    name="ChevronRight" 
+                    size={28} 
+                    className={`relative text-slate-400 transition-all duration-500 ${
+                      hoveredLink === link.id ? 'translate-x-2 text-blue-600 scale-125' : ''
+                    }`}
+                  />
+                </div>
               </a>
             </Card>
           ))}
         </div>
 
-        <Card className="p-8 shadow-xl border-0 bg-white/90 backdrop-blur-sm animate-fade-in relative overflow-hidden">
-          <div className="absolute top-0 left-0 w-40 h-40 bg-gradient-to-br from-blue-400/5 to-transparent rounded-br-full"></div>
-          <div className="flex items-center mb-6">
-            <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center mr-4 shadow-md">
-              <Icon name="HelpCircle" size={24} className="text-white" />
+        <Card className="p-10 shadow-2xl border border-white/20 bg-gradient-to-br from-white/95 to-white/90 backdrop-blur-md animate-fade-in relative overflow-hidden group hover:shadow-blue-500/20 transition-all duration-500">
+          <div className="absolute -top-20 -left-20 w-40 h-40 bg-gradient-to-br from-blue-400/10 to-transparent rounded-full blur-3xl animate-pulse" style={{ animationDuration: '7s' }}></div>
+          <div className="absolute -bottom-16 -right-16 w-32 h-32 bg-gradient-to-tl from-cyan-400/10 to-transparent rounded-full blur-3xl animate-pulse" style={{ animationDuration: '9s', animationDelay: '1.5s' }}></div>
+          
+          <div className="flex items-center mb-8 relative z-10">
+            <div className="relative mr-4">
+              <div className="absolute inset-0 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-2xl blur-lg opacity-50 animate-pulse" style={{ animationDuration: '4s' }}></div>
+              <div className="relative w-14 h-14 rounded-2xl bg-gradient-to-br from-blue-500 via-blue-600 to-cyan-600 flex items-center justify-center shadow-xl">
+                <Icon name="HelpCircle" size={28} className="text-white" />
+              </div>
             </div>
-            <h2 className="text-2xl font-bold text-slate-800">
+            <h2 className="text-3xl font-bold bg-gradient-to-r from-slate-900 via-blue-900 to-slate-900 bg-clip-text text-transparent">
               Вопросы и ответы
             </h2>
           </div>
           
-          <Accordion type="single" collapsible className="space-y-2">
+          <Accordion type="single" collapsible className="space-y-3 relative z-10">
             {faqs.map((faq, index) => (
               <AccordionItem 
                 key={index} 
                 value={`item-${index}`}
-                className="border rounded-lg px-4 bg-slate-50/50 hover:bg-slate-100/50 transition-colors"
+                className="border-2 border-slate-200/50 rounded-2xl px-6 bg-gradient-to-r from-slate-50/80 to-white/80 hover:from-blue-50/80 hover:to-cyan-50/80 hover:border-blue-200/50 transition-all duration-300 hover:shadow-lg group/item"
               >
-                <AccordionTrigger className="text-left font-semibold text-slate-700 hover:text-blue-600 py-4">
-                  {faq.question}
+                <AccordionTrigger className="text-left font-bold text-slate-800 hover:text-blue-600 py-5 transition-colors duration-300">
+                  <span className="flex items-center gap-3">
+                    <span className="w-1.5 h-1.5 rounded-full bg-blue-500 group-hover/item:scale-150 transition-transform duration-300"></span>
+                    {faq.question}
+                  </span>
                 </AccordionTrigger>
-                <AccordionContent className="text-slate-600 pb-4 leading-relaxed">
+                <AccordionContent className="text-slate-700 pb-5 leading-relaxed font-medium">
                   {faq.answer}
                 </AccordionContent>
               </AccordionItem>
